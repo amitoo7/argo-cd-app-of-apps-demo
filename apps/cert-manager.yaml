@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: cert-manager
-  namespace: argocd
+  namespace: argo
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -17,7 +17,7 @@ spec:
           value: 'true'
   destination:
     namespace: cert-manager
-    name: kind
+    name: https://kubernetes.default.svc
   syncPolicy:
     automated: {}
     syncOptions:

@@ -2,13 +2,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: guestbook
-  namespace: argocd
+  namespace: argo
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: guestbook
-    name: kind
+    name: https://kubernetes.default.svc
   project: default
   source:
     path: general/helm-guestbook
